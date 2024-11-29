@@ -4,6 +4,17 @@ type HeaderLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   isSelected?: boolean;
 };
 
-export function HeaderLink({ children, ...props }: HeaderLinkProps) {
-  return <Link {...props}>{children}</Link>;
+export function HeaderLink({
+  children,
+  isSelected,
+  ...props
+}: HeaderLinkProps) {
+  const dynamicStyle = isSelected
+    ? "text-secondary hover:text-white font-bold underline "
+    : "text-white hover:text-secondary";
+  return (
+    <Link className={`text-paragraph ${dynamicStyle}`} {...props}>
+      {children}
+    </Link>
+  );
 }

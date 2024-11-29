@@ -1,5 +1,7 @@
 import React from "react";
 import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
+import { FooterSocialIconEnum } from "./components/Footer/FooterSocialIcon";
 
 enum HeaderLinks {
   ABOUT,
@@ -99,9 +101,20 @@ function App() {
         <div>Perguntas Frequentes</div>
         <div> CTA + Input </div>
       </div>
-      <div className="footer text-white bg-secondary w-full h-24 bottom-0 flex flex-col items-center justify-center">
-        Footer
-      </div>
+      <Footer.Root>
+        <Footer.Logo className="h-10" />
+        <Footer.Navbar>
+          <Footer.Link href="#">Termos e condições</Footer.Link>
+          <Footer.Link href="#">Privacidade</Footer.Link>
+          <Footer.Link href="#">Cookies</Footer.Link>
+        </Footer.Navbar>
+        <Footer.SocialMedia>
+          <Footer.SocialIcon icon={FooterSocialIconEnum.X} />
+          <Footer.SocialIcon icon={FooterSocialIconEnum.INSTAGRAM} />
+          <Footer.SocialIcon icon={FooterSocialIconEnum.TIKTOK} />
+          <Footer.SocialIcon icon={FooterSocialIconEnum.YOUTUBE} />
+        </Footer.SocialMedia>
+      </Footer.Root>
     </div>
   );
 }
