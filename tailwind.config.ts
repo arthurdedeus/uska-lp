@@ -4,7 +4,7 @@ export default {
   theme: {
     colors: {
       "dark-blue": "#282560",
-      primary: "#282560",
+      primary: "#322E89",
       secondary: "#FAAF42",
       "secondary-light": "#FFC676",
       dark: "#1E1E1E",
@@ -15,7 +15,25 @@ export default {
       error: "#FF3B30",
       white: "#FFFFFF",
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+      },
+      fontSize: {
+        h1: ["3rem", { lineHeight: "3.5rem", fontWeight: "700" }],
+        h2: ["2rem", { lineHeight: "2.5rem", fontWeight: "700" }],
+        h3: ["1.5rem", { lineHeight: "2rem", fontWeight: "700" }],
+        paragraph: ["1.125rem", { lineHeight: "2rem", fontWeight: "200" }],
+        "paragraph-alt1": [
+          "1.125rem",
+          { lineHeight: "2rem", fontWeight: "400" },
+        ],
+        "paragraph-alt2": [
+          "0.75rem",
+          { lineHeight: "1.5rem", fontWeight: "400" },
+        ],
+      },
+    },
   },
   plugins: [],
 };
