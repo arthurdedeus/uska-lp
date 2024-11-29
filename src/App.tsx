@@ -1,10 +1,62 @@
+import React from "react";
+import { Header } from "./components/Header";
+
+enum HeaderLinks {
+  ABOUT,
+  HOW_IT_WORKS,
+  PRODUCTS,
+  BENEFITS,
+  FAQ,
+}
+
 function App() {
+  const [selectedHeaderLink, setSelectedHeaderLink] = React.useState(0);
   return (
-    <div className="bg-gradient-to-b from-primary to-dark-blue w-full min-h-screen overflow-hidden flex flex-col items-center">
-      <div className="header bg-secondary w-full top-0 h-24 flex justify-center">
-        Header
-      </div>
-      <div className="primeira-dobra h-[calc(100vh-7rem)] px-[350px] mt-4 flex flex-col justify-between">
+    <div
+      id="about"
+      className="bg-gradient-to-b from-primary to-dark-blue w-full min-h-screen overflow-hidden flex flex-col items-center"
+    >
+      <Header.Root>
+        <Header.Logo />
+        <Header.Navbar>
+          <Header.Link
+            isSelected={selectedHeaderLink === HeaderLinks.ABOUT}
+            onClick={() => setSelectedHeaderLink(HeaderLinks.ABOUT)}
+            href="#about"
+          >
+            Sobre
+          </Header.Link>
+          <Header.Link
+            isSelected={selectedHeaderLink === HeaderLinks.HOW_IT_WORKS}
+            onClick={() => setSelectedHeaderLink(HeaderLinks.HOW_IT_WORKS)}
+            href="#how-it-works"
+          >
+            Como funciona
+          </Header.Link>
+          <Header.Link
+            isSelected={selectedHeaderLink === HeaderLinks.PRODUCTS}
+            onClick={() => setSelectedHeaderLink(HeaderLinks.PRODUCTS)}
+            href="#products"
+          >
+            Produtos
+          </Header.Link>
+          <Header.Link
+            isSelected={selectedHeaderLink === HeaderLinks.BENEFITS}
+            onClick={() => setSelectedHeaderLink(HeaderLinks.BENEFITS)}
+            href="#products"
+          >
+            Benefícios
+          </Header.Link>
+          <Header.Link
+            isSelected={selectedHeaderLink === HeaderLinks.FAQ}
+            onClick={() => setSelectedHeaderLink(HeaderLinks.FAQ)}
+            href="#products"
+          >
+            FAQ
+          </Header.Link>
+        </Header.Navbar>
+      </Header.Root>
+      <div className="primeira-dobra h-[calc(100vh-8rem)] px-[350px] mt-4 flex flex-col justify-between">
         <div className="flex flex-row">
           <div>
             <h1 className="font-poppins text-h1 text-white">
@@ -19,7 +71,10 @@ function App() {
         </div>
         <div className="bg-error flex justify-center">Saber mais </div>
       </div>
-      <div className="segunda-dobra bg-white w-full h-screen flex flex-col items-center justify-center">
+      <div
+        id="how-it-works"
+        className="segunda-dobra bg-white w-full h-screen flex flex-col items-center justify-center"
+      >
         <div className="flex flex-col">
           <div className="image"></div>
           <div className="text">Leilões ao vivo!</div>
@@ -33,7 +88,10 @@ function App() {
           <div className="text">Itens Exclusivos!</div>
         </div>
       </div>
-      <div className="terceira-dobra text-white h-screen flex flex-col items-center justify-center">
+      <div
+        id="products"
+        className="terceira-dobra text-white h-screen flex flex-col items-center justify-center"
+      >
         <div>Produtos Disponíveis</div>
         <div>Categorias</div>
         <div>Mais Motivos Para Fazer Parte</div>
