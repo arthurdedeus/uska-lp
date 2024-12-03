@@ -2,6 +2,7 @@ import React from "react";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { FooterSocialIconEnum } from "./components/Footer/FooterSocialIcon";
+import { FirstFold } from "./components/FirstFold";
 
 enum HeaderLinks {
   ABOUT,
@@ -58,21 +59,20 @@ function App() {
           </Header.Link>
         </Header.Navbar>
       </Header.Root>
-      <div className="primeira-dobra h-[calc(100vh-8rem)] px-[350px] mt-4 flex flex-col justify-between">
-        <div className="flex flex-row">
-          <div>
-            <h1 className="font-poppins text-h1 text-white">
-              Encontre os maiores tesouros geek!
-            </h1>
-            <p className="font-poppins text-paragraph text-white">
-              Leilões ao vivo para comprar, vender e descobrir itens raros da
-              cultura pop - com total segurança!
-            </p>
-          </div>
-          <div className="bg-secondary min-h-[480px] min-w-[480px]">Imagem</div>
-        </div>
-        <div className="bg-error flex justify-center">Saber mais </div>
-      </div>
+      <FirstFold.Root>
+        <FirstFold.ContentRoot>
+          <FirstFold.CopyRoot>
+            <FirstFold.CopyHeading text="Encontre os maiores tesouros geek!" />
+            <FirstFold.CopyText text="Leilões ao vivo para comprar, vender e descobrir itens raros da cultura pop - com total segurança!" />
+            <FirstFold.CTARoot>
+              <FirstFold.Input placeholder="Seu melhor email..." />
+              <FirstFold.Button>Cadastrar</FirstFold.Button>
+            </FirstFold.CTARoot>
+          </FirstFold.CopyRoot>
+          <FirstFold.Image />
+        </FirstFold.ContentRoot>
+        <FirstFold.LearnMore href="#how-it-works" />
+      </FirstFold.Root>
       <div
         id="how-it-works"
         className="segunda-dobra bg-white w-full h-screen flex flex-col items-center justify-center"
