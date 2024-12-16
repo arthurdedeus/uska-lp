@@ -3,6 +3,7 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { FooterSocialIconEnum } from "./components/Footer/FooterSocialIcon";
 import { FirstFold } from "./components/FirstFold";
+import { SecondFold } from "./components/SecondFold";
 
 enum HeaderLinks {
   ABOUT,
@@ -73,23 +74,32 @@ function App() {
         </FirstFold.ContentRoot>
         <FirstFold.LearnMore href="#how-it-works" />
       </FirstFold.Root>
-      <div
-        id="how-it-works"
-        className="segunda-dobra bg-white w-full h-screen flex flex-col items-center justify-center"
-      >
-        <div className="flex flex-col">
-          <div className="image"></div>
-          <div className="text">Leilões ao vivo!</div>
-        </div>
-        <div className="flex flex-col">
-          <div className="text">100% Seguro!</div>
-          <div className="image"></div>
-        </div>
-        <div className="flex flex-col">
-          <div className="image"></div>
-          <div className="text">Itens Exclusivos!</div>
-        </div>
-      </div>
+      <SecondFold.Root>
+        <SecondFold.ContentRoot>
+          <SecondFold.Image src="auctions.svg" alt="auctions" />
+          <SecondFold.Copy
+            title="Leilões ao vivo!"
+            text="Participe da emoção dos leilões em tempo real!
+            Conecte-se com a sua comunidade e descubra itens incríveis com total transparência."
+          />
+        </SecondFold.ContentRoot>
+        <SecondFold.ContentRoot>
+          <SecondFold.Copy
+            title="100% Seguro"
+            text="Compre e venda com tranquilidade!
+            Garantimos a sua proteção em cada transação, porque sua segurança é a nossa prioridade."
+          />
+          <SecondFold.Image src="safe.svg" alt="safe" />
+        </SecondFold.ContentRoot>
+        <SecondFold.ContentRoot>
+          <SecondFold.Image src="exclusive.svg" alt="exclusive" />
+          <SecondFold.Copy
+            title="Itens Exclusivos!"
+            text="Descubra tesouros únicos e colecionáveis raros que você só encontra aqui e receba no conforto de sua casa.
+            Não perca a chance de garantir algo verdadeiramente especial!"
+          />
+        </SecondFold.ContentRoot>
+      </SecondFold.Root>
       <div
         id="products"
         className="terceira-dobra text-white h-screen flex flex-col items-center justify-center"
