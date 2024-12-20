@@ -4,6 +4,10 @@ import { Footer } from "./components/Footer";
 import { FooterSocialIconEnum } from "./components/Footer/FooterSocialIcon";
 import { FirstFold } from "./components/FirstFold";
 import { SecondFold } from "./components/SecondFold";
+import { ThirdFold } from "./components/ThirdFold";
+
+import { Input } from "./components/Input";
+import { Button } from "./components/Button";
 
 enum HeaderLinks {
   ABOUT,
@@ -47,14 +51,14 @@ function App() {
           <Header.Link
             isSelected={selectedHeaderLink === HeaderLinks.BENEFITS}
             onClick={() => setSelectedHeaderLink(HeaderLinks.BENEFITS)}
-            href="#products"
+            href="#benefits"
           >
             Benefícios
           </Header.Link>
           <Header.Link
             isSelected={selectedHeaderLink === HeaderLinks.FAQ}
             onClick={() => setSelectedHeaderLink(HeaderLinks.FAQ)}
-            href="#products"
+            href="#FAQ"
           >
             FAQ
           </Header.Link>
@@ -74,7 +78,7 @@ function App() {
         </FirstFold.ContentRoot>
         <FirstFold.LearnMore href="#how-it-works" />
       </FirstFold.Root>
-      <SecondFold.Root>
+      <SecondFold.Root id="how-it-works">
         <SecondFold.ContentRoot>
           <SecondFold.Image src="auctions.svg" alt="auctions" />
           <SecondFold.Copy
@@ -100,17 +104,44 @@ function App() {
           />
         </SecondFold.ContentRoot>
       </SecondFold.Root>
-      <div
-        id="products"
-        className="terceira-dobra text-white h-screen flex flex-col items-center justify-center"
-      >
-        <div>Produtos Disponíveis</div>
-        <div>Categorias</div>
-        <div>Mais Motivos Para Fazer Parte</div>
-        <div>Motivos</div>
-        <div>Perguntas Frequentes</div>
-        <div> CTA + Input </div>
-      </div>
+      <ThirdFold.Root>
+        <ThirdFold.ProductsCopy id="products" />
+        <ThirdFold.ProductsContainer>
+          <ThirdFold.Product text="Trading Card Game" image="tcg.png" />
+          <ThirdFold.Product text="Videogames" image="joystick.png" />
+          <ThirdFold.Product text="Funko & Toys" image="funko.png" />
+          <ThirdFold.Product text="Comics & Mangás" image="manga.png" />
+        </ThirdFold.ProductsContainer>
+        <ThirdFold.ReasonsCopy id="benefits" />
+        <ThirdFold.ReasonContainer>
+          <ThirdFold.Reason
+            text={`Compre com tranquilidade!\n\u00A0`}
+            image="placeholder.png"
+          />
+          <ThirdFold.Reason
+            text="Transforme o seu hobby em uma renda extra!"
+            image="placeholder.png"
+          />
+          <ThirdFold.Reason
+            text={`Faça parte de uma comunidade!\n\u00A0`}
+            image="placeholder.png"
+          />
+        </ThirdFold.ReasonContainer>
+        <ThirdFold.FAQTitle />
+        <ThirdFold.Accordion
+          title="Qual o custo para usar a plataforma?"
+          content="Nada, porque ela ainda não existe."
+        />
+        <ThirdFold.Accordion
+          title="Qualquer pessoa física ou jurídica pode se cadastrar?"
+          content="Sim, hoje em dia até cachorro pode."
+        />
+        <ThirdFold.Accordion
+          title="Como começar a usar a plataforma?"
+          content="Primeiro tem que terminar de fazer, depois a gente vê."
+        />
+        <ThirdFold.CTA />
+      </ThirdFold.Root>
       <Footer.Root>
         <Footer.Logo className="h-10" />
         <Footer.Navbar>

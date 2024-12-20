@@ -7,6 +7,7 @@ export default {
       primary: "#322E89",
       secondary: "#FAAF42",
       "secondary-light": "#FFC676",
+      "secondary-dark": "#473313",
       dark: "#1E1E1E",
       "dark-grey": "#818285",
       "mid-grey": "#E0E0E0",
@@ -14,6 +15,9 @@ export default {
       success: "#4CD964",
       error: "#FF3B30",
       white: "#FFFFFF",
+      black: "#000000",
+      transparent: "transparent",
+      "light-purple": "#642ab3",
     },
     extend: {
       fontFamily: {
@@ -26,7 +30,7 @@ export default {
         paragraph: ["1.125rem", { lineHeight: "2rem", fontWeight: "200" }],
         "paragraph-alt1": [
           "1.125rem",
-          { lineHeight: "2rem", fontWeight: "400" },
+          { lineHeight: "2rem", fontWeight: "700" },
         ],
         "paragraph-alt2": [
           "0.75rem",
