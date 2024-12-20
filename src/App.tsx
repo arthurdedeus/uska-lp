@@ -6,9 +6,6 @@ import { FirstFold } from "./components/FirstFold";
 import { SecondFold } from "./components/SecondFold";
 import { ThirdFold } from "./components/ThirdFold";
 
-import { Input } from "./components/Input";
-import { Button } from "./components/Button";
-
 enum HeaderLinks {
   ABOUT,
   HOW_IT_WORKS,
